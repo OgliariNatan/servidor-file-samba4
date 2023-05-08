@@ -1,2 +1,2 @@
-# rotina_backup
-Criação de uma rotina de Backup para arquivos compartilhados no samba
+# Rotina Backup
+Implementação de uma rotina de uma automação de backup de arquivos compartilhados com o samba.
