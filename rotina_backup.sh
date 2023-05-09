@@ -62,3 +62,4 @@ echo "Uso do disco sda6:" $(df -h /dev/sda6) >> /home/servidor/Documentos/corpo_
 #########Reiniciação da maquina servidor de Arquivos
 
 #Implementar aqui
+reboot
