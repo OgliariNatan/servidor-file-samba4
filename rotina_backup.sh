@@ -8,7 +8,7 @@
 ##
 ##Opção: [v] exibe o progresso, [p] mantem as permissões
 
-#tar -czf /home/servidor/Documentos/backup/backup_$(date +%d%m%y).tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento 
+#tar -czf /home/servidor/Documentos/backup/backup_$(date +%d%m%y).tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento
 
 nome_arq=/home/servidor/Documentos/backup_$(date +%d%m%y).tar.gz
 
@@ -23,6 +23,7 @@ while read arq; do
 	echo "Quantidade de arquivo:" $qtd_arq
 	#echo "Quantidade de backup na pasta:" $(find /home/servidor/Documentos/backup/ -type f | wc -l)
 	#if((1#${#nome_arquivo[@]}>2))
+	#Caso possua mais do que 1 arquivo remova o arquivo antigo
 	if (($qtd_arq > 1))
 	then
 		#echo "Entrou no IF"
@@ -39,14 +40,15 @@ rm /home/servidor/Documentos/arquivos.txt
 ###################################
 ########### INICIO BACKUP ###########
 ##Primeiro remove os backup antigos e posterior realiza um novo backup
-
-tar -czf /home/servidor/Documentos/backup/backup_$(date +%d%m%y).tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento 
+##o backup é realizado através de arquivo compactado
+tar -czf /home/servidor/Documentos/backup/backup_$(date +%d%m%y).tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento
 
 ######### FIM BACKUP ##########
 ##############################
 ## Sistema para informar o que esta acontecendo com o backup,
 ## para enviar via e-mail as informações das saidas
-
+################################
+#Informa o tamanho dos arquivos
 echo $(ls -sh /home/servidor/Documentos/backup) >> /home/servidor/Documentos/corpo_da_mensagem.txt
 
 
@@ -54,10 +56,9 @@ echo $(ls -sh /home/servidor/Documentos/backup) >> /home/servidor/Documentos/cor
 
 ##IMPLEMENTAR AQUI !!!!!!!
 
-## ao final reinicia o  servidor
-
 echo "Backup Finalizado em:" $(date +%d%m%y¨%a¨), Dir do backup: $nome_arq >> /home/servidor/Documentos/corpo_da_mensagem.txt
 echo "Possui" $(find /home/servidor/Documentos/backup/ -type f | wc -l) "Arquivos de backup" >> /home/servidor/Documentos/corpo_da_mensagem.txt
 echo "Uso do disco sda6:" $(df -h /dev/sda6) >> /home/servidor/Documentos/corpo_da_mensagem.txt
-#reboot -f
-#halt --reboot
+#########Reiniciação da maquina servidor de Arquivos
+
+#Implementar aqui
