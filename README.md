@@ -42,4 +42,4 @@ Após toda e qualquer alteração, é necessário reiniciar os processos.
 * systemctl restart nmbd.service
 * systemctl restart syslog
 
-wsedagvj
+wsed
