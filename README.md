@@ -46,4 +46,4 @@ Após toda e qualquer alteração, é necessário reiniciar os processos.
 
 * crontab -e
 
-** 0 0 * * 7 /home/servidor/Documentos/rotina_backup.sh
+ 0 0 * * 7 /home/servidor/Documentos/rotina_backup.sh
