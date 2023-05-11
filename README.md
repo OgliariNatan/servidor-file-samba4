@@ -42,7 +42,7 @@ Após toda e qualquer alteração, é necessário reiniciar os processos.
 * systemctl restart nmbd.service
 * systemctl restart syslog
 
-Autorizando a execução do arquivo de rotina_backup.
+## Autorizando a execução do arquivo de rotina_backup.
 
 * crontab -e
 
