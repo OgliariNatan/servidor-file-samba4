@@ -42,4 +42,7 @@ Após toda e qualquer alteração, é necessário reiniciar os processos.
 * systemctl restart nmbd.service
 * systemctl restart syslog
 
-wsed
+
+* crontab -e
+
+ 0 0 * * 7 /home/servidor/Documentos/rotina_backup.sh
