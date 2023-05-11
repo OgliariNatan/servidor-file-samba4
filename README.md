@@ -41,3 +41,5 @@ Após toda e qualquer alteração, é necessário reiniciar os processos.
 * systemctl restart smbd.service
 * systemctl restart nmbd.service
 * systemctl restart syslog
+
+## Habilitando automação através do cron
