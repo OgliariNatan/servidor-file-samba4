@@ -1,4 +1,4 @@
-OgliariNatan: <img src="https://img.shields.io/github/directory-file-count/OgliariNatan/rotina_backup?label=qtd_arquivos&style=plastic" />
+<img src="https://img.shields.io/github/directory-file-count/OgliariNatan/rotina_backup?label=qtd_arquivos&style=plastic" />
 
 # Repositorio com arquivos de configuração do servidor de arquivos.
 
