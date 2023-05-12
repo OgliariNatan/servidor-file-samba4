@@ -31,7 +31,7 @@ Implementação de uma rotina de uma automação de backup de arquivos compartil
 
 Criar um arquivo em:
 * /etc/rsyslog.d/auditsamba.conf
-* Dentro do arquivo -> "local5.* /home/servidor/Documentos/log1/log.auditsamba_full"
+
 
 ## Testando a configuração do SAMBA
 
