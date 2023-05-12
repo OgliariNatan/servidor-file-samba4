@@ -14,11 +14,11 @@ Arquivo de configuração do samba.
 
 ## Adicionando usuários
 
-Cria-se usuários normais no <img src="https://img.shields.io/badge/-LINUX-brightgreen" /> e adiciona ao samba.
+Cria-se usuários normais no <img src="https://img.shields.io/badge/-LINUX-brightgreen" /> e adiciona ao <img src="https://img.shields.io/badge/-SAMBA-violet"/>.
 
 * useeradd [nome_usuario] => Cria usuario no linux.
-* smbpasswd -a [nome_usuario] => add usuários ao SAMBA e especifica uma senha
-* smbpasswd -U [nome_usuario] => Altera senha SAMBA
+* smbpasswd -a [nome_usuario] => add usuários ao <img src="https://img.shields.io/badge/-SAMBA-violet"/> e especifica uma senha
+* smbpasswd -U [nome_usuario] => Altera senha <img src="https://img.shields.io/badge/-SAMBA-violet"/>
 
 ## rotina_backup.sh
 
@@ -41,7 +41,7 @@ Criar um arquivo em:
 
 * tail -f /var/log/syslog
 
-## Testando a configuração do SAMBA
+## Testando a configuração do <img src="https://img.shields.io/badge/-SAMBA-violet"/>
 
 testparm => Realiza o teste do arquivo smb.conf
 
