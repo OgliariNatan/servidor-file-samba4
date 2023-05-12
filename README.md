@@ -14,7 +14,7 @@ Arquivo de configuração do samba.
 
 ## Adicionando usuários
 
-Cria-se usuários normais no <img src="https://img.shields.io/badge/Linux-E34F26?style=for-the-badge&logo=linux&logoColor=black" /> e adiciona ao samba.
+Cria-se usuários normais no <img src="https://img.shields.io/badge/-LINUX-brightgreen" /> e adiciona ao samba.
 
 * useeradd [nome_usuario] => Cria usuario no linux.
 * smbpasswd -a [nome_usuario] => add usuários ao SAMBA e especifica uma senha
