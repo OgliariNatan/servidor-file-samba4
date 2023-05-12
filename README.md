@@ -21,6 +21,10 @@ Implementação de uma rotina de uma automação de backup de arquivos compartil
 
 Arquivo que irá conter as especificações para a auditoria e o local do registro.
 
+Criar um arquivo em:
+* /etc/rsyslog.d/auditsamba.conf
+
+
 ## Para apagar os registro de LOGIN no WIN
 
 * net use * /delete /y
@@ -29,12 +33,6 @@ Arquivo que irá conter as especificações para a auditoria e o local do regist
 ## Para auditoria em tempo real
 
 * tail -f /var/log/syslog
-
-## Configuração de auditoria
-
-Criar um arquivo em:
-* /etc/rsyslog.d/auditsamba.conf
-
 
 ## Testando a configuração do SAMBA
 
