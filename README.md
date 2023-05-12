@@ -61,5 +61,5 @@ Após toda e qualquer alteração, é necessário reiniciar os processos.
 
  ## Para verificação na máquina
 
- * df -h &#8658; Uso da ROM
+ * df -h &#8680; Uso da ROM
  * du -h pasta &#8658; Tamanho da pasta
