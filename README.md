@@ -17,6 +17,9 @@ Arquivo de configuração do samba.
 
 Implementação de uma rotina de uma automação de backup de arquivos compartilhados com o samba.
 
+## auditsamba.conf
+
+Arquivo que irá conter as especificações para a auditoria e o local do registro.
 
 ## Para apagar os registro de LOGIN no WIN
 
