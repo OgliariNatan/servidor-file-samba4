@@ -1,6 +1,7 @@
 # Repositorio com arquivos de configuração do servidor de arquivos.
 
-Um pequeno manual de como configurar um servidor de arquivos com acesso por user&password com o SAMBA.
+Um pequeno manual de como configurar um servidor de arquivos com acesso por user&password com o <a href="https://www.samba.org/"> SAMBA</a>.
+
 
 ### Autorizar as porta
 
