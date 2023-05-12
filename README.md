@@ -16,9 +16,9 @@ Arquivo de configuração do samba.
 
 Cria-se usuários normais no <img src="https://img.shields.io/badge/-LINUX-brightgreen" /> e adiciona ao <img src="https://img.shields.io/badge/-SAMBA-violet"/>.
 
-* useeradd [nome_usuario] => Cria usuario no linux.
-* smbpasswd -a [nome_usuario] => add usuários ao <img src="https://img.shields.io/badge/-SAMBA-violet"/> e especifica uma senha
-* smbpasswd -U [nome_usuario] => Altera senha <img src="https://img.shields.io/badge/-SAMBA-violet"/>
+* useeradd [nome_usuario] &#8658; Cria usuario no linux.
+* smbpasswd -a [nome_usuario] &#8658; add usuários ao <img src="https://img.shields.io/badge/-SAMBA-violet"/> e especifica uma senha
+* smbpasswd -U [nome_usuario] &#8658; Altera senha <img src="https://img.shields.io/badge/-SAMBA-violet"/>
 
 ## rotina_backup.sh
 
@@ -43,7 +43,7 @@ Criar um arquivo em:
 
 ## Testando a configuração do <img src="https://img.shields.io/badge/-SAMBA-violet"/>
 
-testparm => Realiza o teste do arquivo smb.conf
+testparm &#8658; Realiza o teste do arquivo smb.conf
 
 ## Reiniciando as configurações
 
@@ -61,5 +61,5 @@ Após toda e qualquer alteração, é necessário reiniciar os processos.
 
  ## Para verificação na máquina
 
- * df -h &#9755; Uso da ROM
- * du -h pasta => Tamanho da pasta
+ * df -h&#8658; Uso da ROM
+ * du -h pasta &#8658; Tamanho da pasta
