@@ -1,5 +1,3 @@
-<img src="https://img.shields.io/github/directory-file-count/OgliariNatan/rotina_backup?label=qtd_arquivos&style=plastic" />
-
 # Repositorio com arquivos de configuração do servidor de arquivos.
 
 Um pequeno manual de como configurar um servidor de arquivos com acesso por user&password com o SAMBA.
@@ -12,6 +10,14 @@ Um pequeno manual de como configurar um servidor de arquivos com acesso por user
 ## smb.conf
 
 Arquivo de configuração do samba.
+
+## Adicionando usuários
+
+Cria-se usuários normais no <img src="https://img.shields.io/badge/Linux-E34F26?style=for-the-badge&logo=linux&logoColor=black" /> e adiciona ao samba.
+
+* useeradd [nome_usuario] => Cria usuario no linux.
+* smbpasswd -a [nome_usuario] => add usuários ao SAMBA e especifica uma senha
+* smbpasswd -U [nome_usuario] => Altera senha SAMBA
 
 ## rotina_backup.sh
 
