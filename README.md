@@ -58,3 +58,8 @@ Após toda e qualquer alteração, é necessário reiniciar os processos.
 * crontab -e
 
  0 0 * * 7 /home/servidor/Documentos/rotina_backup.sh
+
+ ## Para verificação na maquina
+
+ * df -h => Uso da ROM
+ * du -h pasta => Tamanho da pasta
