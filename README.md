@@ -3,9 +3,11 @@
 Um pequeno manual de como configurar um servidor de arquivos com acesso por user&password com o <a href="https://www.samba.org/"> <img src="https://img.shields.io/badge/-SAMBA-violet"/> </a>.
 
 
-### Autorizar as porta
+### Autorizar as porta e instalando o ssh
 
-*ufw allow ssh | ufw allow 22 #porta do samba (22)
+* sudo apt install openssh-server
+* sudo service ssh start
+* ufw allow ssh | ufw allow 22 #porta do samba (22)
 
 
 ## smb.conf
