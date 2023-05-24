@@ -9,6 +9,13 @@ Um pequeno manual de como configurar um servidor de arquivos com acesso por user
 * sudo service ssh start
 * ufw allow ssh | ufw allow 22 #porta do samba (22)
 
+## Alterando a porta ssh
+
+* nano /etc/ssh/sshd_config
+* alterar a linha Port xx (nova porta)
+* ufw allow xx(nova porta)
+* ufw deny 22
+* service sshd restart
 
 ## smb.conf
 
