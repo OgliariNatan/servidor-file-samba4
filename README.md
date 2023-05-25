@@ -70,6 +70,11 @@ Após toda e qualquer alteração, é necessário reiniciar os processos.
 
  ## Para verificação na máquina
 
- * lsblk &#8680; Lista os discos na máquina
  * df -h &#8680; Uso da ROM
  * du -h pasta &#8680; Tamanho da pasta
+
+ ## Para montar discos
+
+ * sudo fdisk -l &#8680; Lista os discos com o caminho
+ * lsblk &#8680; Lista os discos na máquina
+ * sudo mount /caminho_do_disco /caminho_da_pasta_a_ser_montada
