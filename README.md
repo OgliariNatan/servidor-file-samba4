@@ -5,17 +5,17 @@ Um pequeno manual de como configurar um servidor de arquivos com acesso por user
 
 ### Autorizar as porta e instalando o ssh
 
-* sudo apt install openssh-server
-* sudo service ssh start
-* ufw allow ssh | ufw allow 22 #porta do samba (22)
+* <code>sudo apt install openssh-server</code>
+* <code>sudo service ssh start</code>
+* <code>ufw allow ssh | ufw allow 22</code> #porta do samba (22)
 
 ## Alterando a porta ssh
 
-* nano /etc/ssh/sshd_config
+* <code> nano /etc/ssh/sshd_config</code>
 * alterar a linha Port xx (nova porta)
-* ufw allow xx(nova porta)
-* ufw deny 22
-* service sshd restart
+* <code>ufw allow xx</code> (nova porta)
+* <code>ufw deny 22</code>
+* <code>service sshd restart</code>
 
 ## smb.conf
 
@@ -75,6 +75,6 @@ Após toda e qualquer alteração, é necessário reiniciar os processos.
 
  ## Para montar discos
 
- * sudo fdisk -l &#8680; Lista os discos com o caminho
+ * <code>sudo fdisk -l </code> &#8680; Lista os discos com o caminho
  * <code> lsblk </code> &#8680; Lista os discos na máquina
  * <code>sudo mount /caminho_do_disco /caminho_da_pasta_a_ser_montada</code>
