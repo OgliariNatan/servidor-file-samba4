@@ -1,4 +1,4 @@
-# Repositorio com arquivos de configuração do servidor de arquivos.
+# Repositório com arquivos de configuração do servidor de arquivos.
 
 Um pequeno manual de como configurar um servidor de arquivos com acesso por user&password com o <a href="https://www.samba.org/"> <img src="https://img.shields.io/badge/-SAMBA-violet"/> </a>.
 
@@ -76,5 +76,5 @@ Após toda e qualquer alteração, é necessário reiniciar os processos.
  ## Para montar discos
 
  * <code>sudo fdisk -l </code> &#8680; Lista os discos com o caminho
- * <code> lsblk </code> &#8680; Lista os discos na máquina
+ * <del> <code> lsblk </code> &#8680; Lista os discos na máquina </del>
  * <code>sudo mount /caminho_do_disco /caminho_da_pasta_a_ser_montada</code>
