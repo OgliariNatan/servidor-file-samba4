@@ -17,7 +17,7 @@ Um pequeno manual de como configurar um servidor de arquivos com acesso por user
 * <code>ufw deny 22</code>
 * <code>service sshd restart</code>
 
-## "smb.conf"
+## smb.conf
 
 Arquivo de configuração do samba.
 
