@@ -77,4 +77,4 @@ Após toda e qualquer alteração, é necessário reiniciar os processos.
 
  * sudo fdisk -l &#8680; Lista os discos com o caminho
  * <code> lsblk </code> &#8680; Lista os discos na máquina
- * sudo mount /caminho_do_disco /caminho_da_pasta_a_ser_montada
+ * <code>sudo mount /caminho_do_disco /caminho_da_pasta_a_ser_montada</code>
