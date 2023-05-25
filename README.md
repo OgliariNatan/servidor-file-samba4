@@ -13,7 +13,7 @@ Um pequeno manual de como configurar um servidor de arquivos com acesso por user
 
 * <code> nano /etc/ssh/sshd_config</code>
 * alterar a linha Port xx (nova porta)
-* <add> <code>ufw allow xx</code> </add> (nova porta)
+* <ins> <code>ufw allow xx</code> </ins> (nova porta)
 * <code>ufw deny 22</code>
 * <code>service sshd restart</code>
 
