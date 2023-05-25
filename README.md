@@ -7,7 +7,7 @@ Um pequeno manual de como configurar um servidor de arquivos com acesso por user
 
 * <code>sudo apt install openssh-server</code>
 * <code>sudo service ssh start</code>
-* <code>ufw allow ssh | ufw allow 22</code> #porta do samba (22)
+* <del> <code>ufw allow ssh </del> | ufw allow 22</code> #porta do samba (22)
 
 ## Alterando a porta ssh
 
