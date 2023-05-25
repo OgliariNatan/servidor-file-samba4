@@ -25,9 +25,9 @@ Arquivo de configuração do samba.
 
 Cria-se usuários normais no <img src="https://img.shields.io/badge/-LINUX-brightgreen" /> e adiciona ao <img src="https://img.shields.io/badge/-SAMBA-violet"/>.
 
-* useeradd [nome_usuario] &#8680; Cria usuario no linux.
-* smbpasswd -a [nome_usuario] &#8680; add usuários ao <img src="https://img.shields.io/badge/-SAMBA-violet"/> e especifica uma senha
-* smbpasswd -U [nome_usuario] &#8680; Altera senha <img src="https://img.shields.io/badge/-SAMBA-violet"/>
+* <code>sudo useradd [nome_usuario]</code> &#8680; Cria usuario no linux.
+* <code>sudo smbpasswd -a [nome_usuario]</code> &#8680; add usuários ao <img src="https://img.shields.io/badge/-SAMBA-violet"/> e especifica uma senha
+* <code>sudo smbpasswd -U [nome_usuario]</code> &#8680; Altera senha <img src="https://img.shields.io/badge/-SAMBA-violet"/>
 
 ## rotina_backup.sh
 
@@ -38,40 +38,40 @@ Implementação de uma rotina de uma automação de backup de arquivos compartil
 Arquivo que irá conter as especificações para a auditoria e o local do registro.
 
 Criar um arquivo em:
-* /etc/rsyslog.d/auditsamba.conf
+* <code>/etc/rsyslog.d/auditsamba.conf</code>
 
 
 ## Para apagar os registro de LOGIN no WIN
 
-* net use * /delete /y
+* <code>net use * /delete /y</code>
 
 
 ## Para auditoria em tempo real
 
-* tail -f /var/log/syslog
+* <code>tail -f /var/log/syslog</code>
 
 ## Testando a configuração do <img src="https://img.shields.io/badge/-SAMBA-violet"/>
 
-testparm &#8680; Realiza o teste do arquivo smb.conf
+* <code>testparm</code> &#8680; Realiza o teste do arquivo smb.conf
 
 ## Reiniciando as configurações
 
 Após toda e qualquer alteração, é necessário reiniciar os processos.
 
-* systemctl restart smbd.service
-* systemctl restart nmbd.service
-* systemctl restart syslog
+* <code> sudo systemctl restart smbd.service</code>
+* <code> sudo systemctl restart nmbd.service</code>
+* <code> sudo systemctl restart syslog</code>
 
 ## Autorizando a execução do arquivo de rotina_backup.
 
-* crontab -e
+* <code>crontab -e</code>
 
  0 0 * * 7 /home/servidor/Documentos/rotina_backup.sh
 
  ## Para verificação na máquina
 
- * df -h &#8680; Uso da ROM
- * du -h pasta &#8680; Tamanho da pasta
+ * <code>df -h</code> &#8680; Uso da ROM
+ * <code>du -h pasta</code> &#8680; Tamanho da pasta
 
  ## Para montar discos
 
