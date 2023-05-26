@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/bash #interpretador bash
+
 ## Script idealizado para manter uma política de backup dos arquivos
 ## compartilhados no Servidor de Arquivos.
 ##
