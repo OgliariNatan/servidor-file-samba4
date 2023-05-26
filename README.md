@@ -67,7 +67,7 @@ Após toda e qualquer alteração, é necessário reiniciar os processos.
 
 * <code>crontab -e</code>
 
- 0 0 * * 7 /home/servidor/Documentos/rotina_backup.sh
+ 0 0 * * 7 /home/servidor/Documentos/rotina_backup.sh </br>
 ctrl+o &#8680; Salva o arquivo cro
 
  ## Para verificação na máquina
