@@ -32,7 +32,8 @@ Cria-se usuários normais no <img src="https://img.shields.io/badge/-LINUX-brigh
 ## rotina_backup.sh
 
 <code> /media/servidor/backup </code>
-Implementação de uma rotina de uma automação de backup de arquivos compartilhados com o samba.
+Implementação de uma rotina de uma automação de backup de arquivos compartilhados com o samba. </br>
+<code> chmod u+x rotina_backup.sh </code> &#8680; Habilita o scripty como executável.
 
 ## auditsamba.conf
 
