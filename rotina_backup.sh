@@ -1,5 +1,16 @@
 #!/bin/bash #interpretador bash
 
+#
+#####	NOME:				rotina_backup.sh
+#####	VERSÃO:				1.1
+#####	DESCRIÇÃO:			Implementação rotina de remoção de arquivos com mais de 90dias da lixeira
+#####	DATA DA CRIAÇÃO:	26/03/2023
+#####	ESCRITO POR:		Natan Ogliari
+#####	E-MAIL:				natanogliari@gmail.com
+#####	DISTRO:				Ubuntu GNU/Linux 22.04
+#####	LICENÇA:			MIT license
+#####	PROJETO:			https://github.com/OgliariNatan/rotina_backup
+
 ## Script idealizado para manter uma política de backup dos arquivos
 ## compartilhados no Servidor de Arquivos.
 ##
