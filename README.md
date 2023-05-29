@@ -82,3 +82,8 @@ ctrl+o &#8680; Salva o arquivo cro
  * <code>sudo fdisk -l </code> &#8680; Lista os discos com o caminho
  * <del> <code> lsblk </code> &#8680; Lista os discos na máquina </del>
  * <code>sudo mount /caminho_do_disco /caminho_da_pasta_a_ser_montada</code>
+
+ ## Ver última reiniciação
+
+ * <code> who -b <\code> &#8680; Última inicialização do sistema.
+ * <code> uptime -p </code> &#8680; Tempo de operação.
