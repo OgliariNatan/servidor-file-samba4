@@ -11,3 +11,10 @@
 #########################Torne o scripty executavél ##########
 ## chmod u+x novo_script
 ##############################
+echo "Bem vindo a criação de usuários samba"
+echo "Digite o nome do usuário:"
+read new_user
+
+useradd $new_user #Cria usuario LINUX
+echo "Digite uma senha para o: $new_user"
+smbpasswd -a $new_user #Associa user ao samba e especifica uma senha
