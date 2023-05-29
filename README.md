@@ -23,6 +23,10 @@ Arquivo de configuração do samba.
 
 ## Adicionando usuários
 
+## add_user_samba.sh
+
+<p> Scripty para adicionar usuários ao samba </p>
+
 Cria-se usuários normais no <img src="https://img.shields.io/badge/-LINUX-brightgreen" /> e adiciona ao <img src="https://img.shields.io/badge/-SAMBA-violet"/>.
 
 * <code>sudo useradd [nome_usuario]</code> &#8680; Cria usuario no linux.
