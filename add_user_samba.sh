@@ -46,8 +46,7 @@ case "$id_status" in
   ;;
   *)
     echo "Insira uma opção válida."
-    exit 1
-  ;;
+    exit 1 #encerra o programa
 esac
 unset id_status new_user user_new_passwd remov_user #Remove todas as variaveis criadas
 echo "Concluído"
