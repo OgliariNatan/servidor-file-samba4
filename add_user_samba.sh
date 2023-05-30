@@ -25,7 +25,7 @@ case "$id_status" in
     useradd $new_user #Cria usuario LINUX
     echo "Digite uma senha para o: $new_user"
     smbpasswd -a $new_user #Associa user ao samba e especifica uma senha
-;;
+  ;;
   2)
     echo "Escolheu a alteração de senha."
     echo "Usuarios cadastrados."
@@ -33,7 +33,7 @@ case "$id_status" in
     echo "Digite o usuário a ser redifinido a senha."
     read user_new_passwd
     smbpasswd -U $user_new_passwd
-;;
+  ;;
   3)
     echo "Escolheu a remoção de usuários."
     echo "Usuarios cadastrados."
@@ -42,6 +42,10 @@ case "$id_status" in
     read remov_user
     smbpasswd -x $remov_user
     userdel -r $remov_user
-esac
+  ;;
+  *)
     echo "Insira uma opção válida."
+  ;;
+esac
+
 echo "Concluído"
