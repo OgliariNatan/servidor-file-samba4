@@ -30,8 +30,9 @@ case "$id_status" in
     echo "Escolheu a alteração de senha."
     echo "Usuarios cadastrados."
     pdbedit -L
-    echo "Digite o usuário a ser redifinido a senha."
-    read user_new_passwd
+    #echo "Digite o usuário a ser redifinido a senha."
+    #read user_new_passwd
+    read -p "Digite o usuário a ser redifinido a senha."user_new_passwd
     smbpasswd -U $user_new_passwd
   ;;
   3)
@@ -45,7 +46,8 @@ case "$id_status" in
   ;;
   *)
     echo "Insira uma opção válida."
+    exit 1
   ;;
 esac
-
+unset id_status new_user user_new_passwd remov_user #Remove todas as variaveis criadas
 echo "Concluído"
