@@ -43,4 +43,5 @@ case "$id_status" in
     smbpasswd -x $remov_user
     userdel -r $remov_user
 esac
-echo "Concluido"
+    echo "Insira uma opção válida."
+echo "Concluído"
