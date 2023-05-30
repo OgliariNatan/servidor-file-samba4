@@ -1,4 +1,4 @@
-#!/bin/bash #interpretador bash
+#!/bin/sh #interpretador bash
 #####	NOME:				add_user_samba.sh
 #####	VERSÃO:				0.1
 #####	DESCRIÇÃO:			Implementação de scripty para adicionar usuarios samba
