@@ -11,6 +11,19 @@
 #########################Torne o scripty executavél ##########
 ## chmod u+x novo_script
 ##############################
+######### / Função de reiniciação dos serviços associados ao samba
+function restart_servicos {
+  #statements
+  sudo systemctl restart smbd.service #Reinicia o samba
+  sudo systemctl restart nmbd.service #Reinicia o NT
+  sudo systemctl restart syslog #Reinicia o sistema de log
+  #testparm #Testa o samba, e exibe o resultado
+}
+
+############### / fim função de reiniciação
+
+
+
 echo "Bem vindo a criação ou remoção de usuários samba"
 echo "Para Adicionar um usuário digite (1)."
 echo "Para alterar uma SENHA de um usuário digite (2)."
@@ -23,9 +36,10 @@ case "$id_status" in
     echo "Escolheu a incerção de um novo usuário."
     echo "Digite o nome do usuário:"
     read new_user
-    useradd $new_user #Cria usuario LINUX
+    sudo useradd $new_user #Cria usuario LINUX
     echo "Digite uma senha para o: $new_user"
-    smbpasswd -a $new_user #Associa user ao samba e especifica uma senha
+    sudo smbpasswd -a $new_user #Associa user ao samba e especifica uma senha
+    restart_servicos
   ;;
   2)
     echo "Escolheu a alteração de senha."

@@ -89,5 +89,5 @@ ctrl+o &#8680; Salva o arquivo cro
 
  ## Ver última reiniciação
 
- * <code> who -b <\code> &#8680; Última inicialização do sistema.
- * <code> uptime -p <\code> &#8680; Tempo de operação.
+ * <code> who -b </code> &#8680; Última inicialização do sistema.
+ * <code> uptime -p </code> &#8680; Tempo de operação.
