@@ -15,6 +15,7 @@ echo "Bem vindo a criação ou remoção de usuários samba"
 echo "Para Adicionar um usuário digite (1)."
 echo "Para alterar uma SENHA de um usuário digite (2)."
 echo "Para Remover um usuário digite (3)."
+echo "Para sair digite (4)."
 read id_status
 
 case "$id_status" in
@@ -43,6 +44,9 @@ case "$id_status" in
     read remov_user
     smbpasswd -x $remov_user
     userdel -r $remov_user
+  ;;
+  4)
+    exit 1
   ;;
   *)
     echo "Insira uma opção válida."
