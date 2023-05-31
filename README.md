@@ -37,8 +37,8 @@ Cria-se usuários normais no <img src="https://img.shields.io/badge/-LINUX-brigh
 
 Implementação de uma rotina de uma automação de backup de arquivos compartilhados com o samba. </br>
 <code> /media/servidor/backup </code> &#8680; Diretório da pasta backup. </br>
-<code> chmod u+x rotina_backup.sh </code> &#8680; Habilita o scripty como executável. </br>
-<code> chown root:root rotina_backup.sh </code> &#8680; Muda o dono do arquivo e executa com root. </br>
+<b> <code> chmod u+x rotina_backup.sh </code> &#8680; Habilita o scripty como executável. </br> </b>
+<b> <code> chown root:root rotina_backup.sh </code> &#8680; Muda o dono do arquivo e executa com root. </br> </b>
 
 ## auditsamba.conf
 
