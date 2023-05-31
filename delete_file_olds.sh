@@ -10,6 +10,6 @@
 #####	LICENÇA:			MIT license
 #####	PROJETO:			https://github.com/OgliariNatan/rotina_backup
 
-cd /home/servidor/Área\ de\ Trabalho\lixeira
+cd /home/servidor/Área\ de\ Trabalho/lixeira
 
 sudo find . -type f -mtime +90 -delete
