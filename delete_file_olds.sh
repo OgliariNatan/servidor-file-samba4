@@ -14,7 +14,7 @@ cd /home/servidor/Área\ de\ Trabalho/lixeira
 
 sudo find . -type f -mtime +90 -delete
 
- if ($? equ 0); then #Grava informações em um arquivo.txt externo
+ if ($? -ne 0); then #Grava informações em um arquivo.txt externo
       echo "Foi apagado arquivos da lixeira" >> /home/servidor/Documentos/corpo_da_mensagem.txt
   else
     echo "Não foi apagado arquivos da lixeira" >> /home/servidor/Documentos/corpo_da_mensagem.txt
