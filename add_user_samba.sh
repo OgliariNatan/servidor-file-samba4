@@ -44,22 +44,25 @@ case "$id_status" in
   2)
     echo "Escolheu a alteração de senha."
     echo "Usuarios cadastrados."
-    pdbedit -L
+    sudo pdbedit -L
     #echo "Digite o usuário a ser redifinido a senha."
     #read user_new_passwd
     read -p "Digite o usuário a ser redifinido a senha."user_new_passwd
-    smbpasswd -U $user_new_passwd
+    sudo smbpasswd -U $user_new_passwd
+    restart_servicos
   ;;
   3)
     echo "Escolheu a remoção de usuários."
     echo "Usuarios cadastrados."
-    pdbedit -L
+    sudo pdbedit -L
     echo  "Digite o usuário a ser removido."
     read remov_user
-    smbpasswd -x $remov_user
-    userdel -r $remov_user
+    sudo smbpasswd -x $remov_user
+    sudo userdel -r $remov_user
+    restart_servicos
   ;;
   4)
+    restart_servicos
     exit 1
   ;;
   *)
