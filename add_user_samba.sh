@@ -37,9 +37,10 @@ case "$id_status" in
     echo "Digite o nome do usuário:"
     read new_user
     sudo useradd $new_user #Cria usuario LINUX
-    echo "Digite uma senha para o: $new_user"
+    echo -e "Digite uma senha para o: \n $new_user"
     sudo smbpasswd -a $new_user #Associa user ao samba e especifica uma senha
     restart_servicos
+    sleep 5
   ;;
   2)
     echo "Escolheu a alteração de senha."

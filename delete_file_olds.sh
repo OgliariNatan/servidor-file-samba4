@@ -14,8 +14,10 @@ echo  "Entrou no scripty"
 cd /home/servidor/Área\ de\ Trabalho/lixeira
 echo -e "Mudou de dir \n ...."
 sudo find . -type f -mtime +90 -delete
+sleep 10
 echo -e "Antecede o IF \n ---------"
- if ($? -ne 0); then #Grava informações em um arquivo.txt externo
+ if ($? -ne 0)
+  then #Grava informações em um arquivo.txt externo
       echo "Entrou na primeira condição"
       echo "Foi apagado arquivos da lixeira" >> /home/servidor/Documentos/corpo_da_mensagem.txt
   else
