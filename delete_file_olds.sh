@@ -18,16 +18,16 @@ echo	"Mudou de dir"
 echo -e "lista de arquivos: \t $(find . -type f -mtime +90)"
 sudo find . -type f -mtime +90 -delete
 #Não pode possuir espaço entre a vbariavél é o valor: var=val
-ver_remocao=$?
-echo  -e " este é o retorno: \t $ver_remocao \t aqui"
+
+echo  -e " este é o retorno: \t $? \t aqui"
 #echo "REMOVEU......."
 
 echo -e "Antecede os if \n ...."
- if [ $ver_remocao == 0 ]; then
-	echo -e	"ENtrou no if \n ...."
-	echo "Foi apagado arquivos da lixeira" >> /home/servidor/Documentos/corpo_da_mensagem.txt
+ if [ $? == 0 ]; then
+	#echo -e	"Entrou no if \n ...."
+	echo -e "Foi apagado arquivos da lixeira." >> /home/servidor/Documentos/corpo_da_mensagem.txt
   else
-    echo -e "Não foi apagado arquivos da lixeira \t o retorno do comando é: $ver_remocao" >> /home/servidor/Documentos/corpo_da_mensagem.txt
+    echo -e "Não foi apagado arquivos da lixeira \t o retorno do comando é: $?" >> /home/servidor/Documentos/corpo_da_mensagem.txt
  fi
 
 echo "Fim do scripty de remoção da lixeira"
