@@ -10,18 +10,19 @@
 #####	LICENÇA:			MIT license
 #####	PROJETO:			https://github.com/OgliariNatan/rotina_backup
 
-echo  "Entrou no scripty"
+echo -e "Entro no scripty de remoção de arquivos da lixeira \n\n"
+
 cd /home/servidor/Área\ de\ Trabalho/lixeira
-echo -e "Mudou de dir \n ...."
+
+echo	"Mudou de dir"
+
 sudo find . -type f -mtime +90 -delete
-sleep 10
-echo -e "Antecede o IF \n ---------"
- if ($? -ne 0)
-  then #Grava informações em um arquivo.txt externo
-      echo "Entrou na primeira condição"
-      echo "Foi apagado arquivos da lixeira" >> /home/servidor/Documentos/corpo_da_mensagem.txt
+echo -e "Antecede os if \n ...."
+ if ($? -ne 0); then
+	echo -e	"ENtrou no if \n ...."
+	echo "Foi apagado arquivos da lixeira" >> /home/servidor/Documentos/corpo_da_mensagem.txt
   else
-    echo "Entrou na segunda condição"
     echo "Não foi apagado arquivos da lixeira" >> /home/servidor/Documentos/corpo_da_mensagem.txt
  fi
-echo "Fim do scripty"
+
+echo "Fim do scripty de remoção da lixeira"
