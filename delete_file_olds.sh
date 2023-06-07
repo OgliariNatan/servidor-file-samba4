@@ -15,7 +15,7 @@ echo -e "Entro no scripty de remoção de arquivos da lixeira \n\n"
 cd /home/servidor/Área\ de\ Trabalho/lixeira
 
 echo	"Mudou de dir"
-echo -e "lista de arquivos: \t $(find . -type f -mtime +60)"
+echo -e "lista de arquivos: \t $(find . -type f -mtime +90)"
 sudo find . -type f -mtime +90 -delete
 #Não pode possuir espaço entre a vbariavél é o valor: var=val
 ver_remocao=$?
@@ -23,8 +23,7 @@ echo  -e " este é o retorno: \t $ver_remocao \t aqui"
 #echo "REMOVEU......."
 
 echo -e "Antecede os if \n ...."
- if ($ver_remocao == 0)
-  then
+ if [ $ver_remocao == 0 ]; then
 	echo -e	"ENtrou no if \n ...."
 	echo "Foi apagado arquivos da lixeira" >> /home/servidor/Documentos/corpo_da_mensagem.txt
   else
