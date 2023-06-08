@@ -31,7 +31,7 @@ Cria-se usuários normais no <img src="https://img.shields.io/badge/-LINUX-brigh
 
 <details>
 <summary> Alterando o arquivo $sudoers </summary>
-
+<code> sudo visudo </code>
 Defaults secure_path="/usr/local/sbin:.....:ADD_DIR_SCRIPTY"
 <p> user ALL=(ALL:ALL) ALL &#8680; add_user </p>
 
