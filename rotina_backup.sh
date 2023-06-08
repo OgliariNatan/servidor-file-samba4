@@ -25,7 +25,7 @@
 
 
 
-echo -e "\n ################## INICIO\t $(date +%D-%T) ##################\n\n"
+echo -e "\n ################## INICIO\t $(date +%d/%m-%T) ##################\n\n" >> /home/servidor/Documentos/corpo_da_mensagem.txt
 
 
 
@@ -46,7 +46,7 @@ while read arq; do
 	if (($qtd_arq > 1))
 	then
 		#echo "Entrou no IF"
-		echo "Irá remover o arquivo:" $(find /home/servidor/Documentos/backup/ -mtime +5)
+		echo "Irá remover o arquivo:" $(find /home/servidor/Documentos/backup/ -mtime +5) >> /home/servidor/Documentos/corpo_da_mensagem.txt
 		rm -f $(find /home/servidor/Documentos/backup/ -mtime +5)
 		sleep 2
 	else
@@ -67,8 +67,8 @@ sleep 5
 ##############################
 ## Sistema para informar o que esta acontecendo com o backup,
 ## para enviar via e-mail as informações das saidas
-
 echo $(ls -sh /home/servidor/Documentos/backup) >> /home/servidor/Documentos/corpo_da_mensagem.txt
+
 
 
 ## Envia via e-mail quando houver falha no backup
@@ -77,12 +77,11 @@ echo $(ls -sh /home/servidor/Documentos/backup) >> /home/servidor/Documentos/cor
 
 ## ao final reinicia o  servidor
 
-echo "Backup Finalizado em:" $(date +%d%m%y¨%a¨), Dir do backup: $nome_arq >> /home/servidor/Documentos/corpo_da_mensagem.txt
+echo "Backup Finalizado em:" $(date +%d%m%y-¨%a¨), Dir do backup: $nome_arq >> /home/servidor/Documentos/corpo_da_mensagem.txt
 echo "Possui" $(find /home/servidor/Documentos/backup/ -type f | wc -l) "Arquivos de backup" >> /home/servidor/Documentos/corpo_da_mensagem.txt
 echo "Uso do disco sda6:" $(df -h /dev/sda6) >> /home/servidor/Documentos/corpo_da_mensagem.txt
-echo "\n \n" >> /home/servidor/Documentos?corpo_da_mensagem.txt
+#echo "\n \n" >> /home/servidor/Documentos/corpo_da_mensagem.txt
+echo -e "\n############################ FIM\t $(date +%T) ######################\n\n" >> /home/servidor/Documentos/corpo_da_mensagem.txt
 sleep 5
-
-echo -e "\n############################ FIM ######################\n\n"
 reboot
 #halt --reboot
