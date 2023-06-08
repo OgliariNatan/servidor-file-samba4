@@ -17,6 +17,7 @@ function restart_servicos {
   sudo systemctl restart smbd.service #Reinicia o samba
   sudo systemctl restart nmbd.service #Reinicia o NT
   sudo systemctl restart syslog #Reinicia o sistema de log
+  clear
   #testparm #Testa o samba, e exibe o resultado
 }
 
