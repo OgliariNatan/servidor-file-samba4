@@ -31,7 +31,11 @@ Cria-se usuários normais no <img src="https://img.shields.io/badge/-LINUX-brigh
 
 <details>
 <summary> Alterando o arquivo $sudoers </summary>
-<code> sudo visudo </code>
+<code> sudo visudo </code> </br>
+Defaults lecture="never"</br>
+Defaults lecture_file="/docs/lecture/msg.txt"</br>
+
+
 Defaults secure_path="/usr/local/sbin:.....:ADD_DIR_SCRIPTY"
 <p> user ALL=(ALL:ALL) ALL &#8680; add_user </p>
 
@@ -84,6 +88,7 @@ Após toda e qualquer alteração, é necessário reiniciar os processos.
 * <code>crontab -e</code>
 
  0 0 * * 7 /home/servidor/Documentos/rotina_backup.sh </br>
+ 0 0 * * 7 /home/servidor/Documentos/delete_file_olds.sh </br>
 ctrl+o &#8680; Salva o arquivo cro
 
  ## Para verificação na máquina
