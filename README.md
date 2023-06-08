@@ -38,7 +38,7 @@ Defaults lecture_file="/docs/lecture/msg.txt"</br>
 
 Defaults secure_path="/usr/local/sbin:.....:ADD_DIR_SCRIPTY"
 <p> user ALL=(ALL:ALL) ALL &#8680; add_user </p>
-<p> user ALL=NOPASSWD:/home/servidor/Documentos/rotina_backup.sh, /home/servidor/Documentos/delete_file_olds.sh </p>
+<p> user ALL=NOPASSWD:/home/servidor/Documentos/rotina_backup.sh, /home/servidor/Documentos/delete_file_olds.sh &#8680; Executa estes scripty se a solicitação da senha. </p>
 
 </details>
 
