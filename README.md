@@ -88,7 +88,7 @@ Após toda e qualquer alteração, é necessário reiniciar os processos.
 * <code>crontab -e</code>
 
  0 0 * * 7 /home/servidor/Documentos/rotina_backup.sh </br>
- 0 0 * * 7 /home/servidor/Documentos/delete_file_olds.sh </br>
+ 0 0 * * 7 /home/servidor/Documentos/delete_file_olds.sh </br> &#8680; use sudo crontab -e
 ctrl+o &#8680; Salva o arquivo cro
 
  ## Para verificação na máquina
