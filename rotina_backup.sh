@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 ##
 #####	NOME:				rotina_backup.sh
 #####	VERSÃO:				1.1
@@ -25,7 +25,7 @@
 
 
 
-echo -e "\n ################## INICIO ##################\n\n"
+echo -e "\n ################## INICIO\t $(date +%D-%T) ##################\n\n"
 
 
 
