@@ -1,7 +1,7 @@
 # Repositório com arquivos de configuração do servidor de arquivos.
 
 Um pequeno manual de como configurar um servidor de arquivos com acesso por user&password com o <a href="https://www.samba.org/"> <img src="https://img.shields.io/badge/-SAMBA-violet"/> </a>.
-<img src="https://img.shields.io/badge/Feito%20-Bash-1f425f.svg"/>
+<img src="https://img.shields.io/badge/Feito%20-Bash-1f425f.svg"/> 
 
 ### Autorizar as porta e instalando o ssh
 
