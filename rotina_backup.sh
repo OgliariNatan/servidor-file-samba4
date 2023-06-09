@@ -46,13 +46,13 @@ while read arq; do
 	if (($qtd_arq > 1))
 	then
 		#echo "Entrou no IF"
-		echo "Irá remover o arquivo:" $(find /home/servidor/Documentos/backup/ -mtime +5) >> /home/servidor/Documentos/corpo_da_mensagem.txt
-		rm -f $(find /home/servidor/Documentos/backup/ -mtime +5)
+		echo "Irá remover o arquivo:" $(find /home/servidor/Documentos/backup/ -mtime +6) >> /home/servidor/Documentos/corpo_da_mensagem.txt
+		rm -f $(find /home/servidor/Documentos/backup/ -mtime +6)
 		sleep 2
 	else
 		echo -e "\n###############\n"
 		echo -e "Não entrou no IF \n"
-		echo "Encontrou este arquivo" $(find /home/servidor/Documentos/backup/ -mtime +5)
+		echo "Encontrou este arquivo" $(find /home/servidor/Documentos/backup/ -mtime +6)
 		echo -e "\n###############\n"
 	fi
 #echo "Terminou o wilhe"
