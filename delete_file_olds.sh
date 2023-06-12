@@ -8,7 +8,7 @@
 #####	E-MAIL:				natanogliari@gmail.com
 #####	DISTRO:				Ubuntu GNU/Linux 22.04
 #####	LICENÇA:			MIT license
-#####	PROJETO:			https://github.com/OgliariNatan/rotina_backup
+#####	PROJETO:			https://github.com/OgliariNatan/servidor-file-samba4
 
 echo -e "Entro no scripty de remoção de arquivos da lixeira \n\n"
 
