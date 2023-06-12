@@ -8,7 +8,7 @@
 #####	E-MAIL:				natanogliari@gmail.com
 #####	DISTRO:				Ubuntu GNU/Linux 22.04
 #####	LICENÇA:			MIT license
-#####	PROJETO:			https://github.com/OgliariNatan/servidor-file-samba4
+#####	PROJETO:			https://github.com/OgliariNatan/rotina_backup
 #########################Torne o scripty executavél ##########
 ## chmod u+x novo_script
 ##############################
@@ -25,7 +25,7 @@
 
 
 
-echo -e "\n ################## INICIO\t $(date +%d/%m-%T) ##################\n\n" >> /home/servidor/Documentos/corpo_da_mensagem.txt
+echo -e "\n ################## INICIO ##################\n\n"
 
 
 
@@ -46,17 +46,18 @@ while read arq; do
 	if (($qtd_arq > 1))
 	then
 		#echo "Entrou no IF"
-		echo "Irá remover o arquivo:" $(find /home/servidor/Documentos/backup/ -mtime +6) >> /home/servidor/Documentos/corpo_da_mensagem.txt
+		echo "Irá remover o arquivo:" $(find /home/servidor/Documentos/backup/ -mtime +6)
 		rm -f $(find /home/servidor/Documentos/backup/ -mtime +6)
 		sleep 2
 	else
 		echo -e "\n###############\n"
 		echo -e "Não entrou no IF \n"
-		echo "Encontrou este arquivo" $(find /home/servidor/Documentos/backup/ -mtime +6)
+		echo "Encontrou este arquivo" $(find /home/servidor/Documentos/backup/ -mtime +1)
 		echo -e "\n###############\n"
 	fi
 #echo "Terminou o wilhe"
 #echo "Removeu o arquivo"
+sleep 2
 ###################################
 ########### INICIO BACKUP ###########
 ##Primeiro remove os backup antigos e posterior realiza um novo backup
@@ -67,8 +68,8 @@ sleep 5
 ##############################
 ## Sistema para informar o que esta acontecendo com o backup,
 ## para enviar via e-mail as informações das saidas
-echo $(ls -sh /home/servidor/Documentos/backup) >> /home/servidor/Documentos/corpo_da_mensagem.txt
 
+echo -e "tamanho do backup:\t $(ls -sh /home/servidor/Documentos/backup)" >> /home/servidor/Documentos/corpo_da_mensagem.txt
 
 
 ## Envia via e-mail quando houver falha no backup
@@ -77,11 +78,12 @@ echo $(ls -sh /home/servidor/Documentos/backup) >> /home/servidor/Documentos/cor
 
 ## ao final reinicia o  servidor
 
-echo "Backup Finalizado em:" $(date +%d%m%y-¨%a¨), Dir do backup: $nome_arq >> /home/servidor/Documentos/corpo_da_mensagem.txt
+echo "Backup Finalizado em:" $(date +%d%m%y¨%a¨), Dir do backup: $nome_arq >> /home/servidor/Documentos/corpo_da_mensagem.txt
 echo "Possui" $(find /home/servidor/Documentos/backup/ -type f | wc -l) "Arquivos de backup" >> /home/servidor/Documentos/corpo_da_mensagem.txt
 echo "Uso do disco sda6:" $(df -h /dev/sda6) >> /home/servidor/Documentos/corpo_da_mensagem.txt
-#echo "\n \n" >> /home/servidor/Documentos/corpo_da_mensagem.txt
-echo -e "\n############################ FIM\t $(date +%T) ######################\n\n" >> /home/servidor/Documentos/corpo_da_mensagem.txt
+echo "\n \n" >> /home/servidor/Documentos?corpo_da_mensagem.txt
 sleep 5
+
+echo -e "\n############################ FIM ######################\n\n"
 reboot
 #halt --reboot
