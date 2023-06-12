@@ -2,7 +2,7 @@
 ##
 #####	NOME:				rotina_backup.sh
 #####	VERSÃO:				1.2
-#####	DESCRIÇÃO:			Implementação rotina de remoção de arquivos com mais de 90dias da lixeira
+#####	DESCRIÇÃO:			Implementação rotina de backup 
 #####	DATA DA CRIAÇÃO:	26/03/2023
 #####	ESCRITO POR:		Natan Ogliari
 #####	E-MAIL:				natanogliari@gmail.com
