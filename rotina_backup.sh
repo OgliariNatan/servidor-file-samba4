@@ -1,7 +1,7 @@
 #!/bin/bash
 ##
 #####	NOME:				rotina_backup.sh
-#####	VERSÃO:				1.1
+#####	VERSÃO:				1.2
 #####	DESCRIÇÃO:			Implementação rotina de remoção de arquivos com mais de 90dias da lixeira
 #####	DATA DA CRIAÇÃO:	26/03/2023
 #####	ESCRITO POR:		Natan Ogliari
@@ -46,8 +46,7 @@ else
 		echo -e "\n###############\n"
 fi
 
-#echo "Removeu o arquivo"
-sleep 2
+#sleep 2
 
 ###################################
 ########### INICIO BACKUP ###########
