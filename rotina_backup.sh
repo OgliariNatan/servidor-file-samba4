@@ -2,7 +2,7 @@
 ##
 #####	NOME:				rotina_backup.sh
 #####	VERSÃO:				1.2
-#####	DESCRIÇÃO:			Implementação rotina de backup 
+#####	DESCRIÇÃO:			Implementação rotina de backup
 #####	DATA DA CRIAÇÃO:	26/03/2023
 #####	ESCRITO POR:		Natan Ogliari
 #####	E-MAIL:				natanogliari@gmail.com
@@ -33,8 +33,8 @@ nome_arquivo=($nome_arq)
 qtd_arq=$(find /home/servidor/Documentos/backup/ -type f | wc -l)
 
 echo  -e "Quantidade de backup na pasta:\t" $(find /home/servidor/Documentos/backup/ -type f | wc -l) >> /home/servidor/Documentos/corpo_da_mensagem.txt
-
-if [$qtd_arq -ge 1];	then
+# Ver qual a melhor implemantação (>=) ou  (-ge). a ultima
+if [$(find /home/servidor/Documentos/backup/ -type f | wc -l) -ge 1];	then
 		#echo "Entrou no IF"
 		echo "Irá remover o arquivo:" $(find /home/servidor/Documentos/backup/ -mtime +6) >> /home/servidor/Documentos/corpo_da_mensagem.txt
 		rm -f $(find /home/servidor/Documentos/backup/ -mtime +6)
@@ -53,7 +53,7 @@ fi
 ##Primeiro remove os backup antigos e posterior realiza um novo backup
 
 tar -czf /home/servidor/Documentos/backup/backup_$(date +%d%m%y).tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento
-sleep 5
+#sleep 5
 ######### FIM BACKUP ##########
 ##############################
 ## Sistema para informar o que esta acontecendo com o backup,
