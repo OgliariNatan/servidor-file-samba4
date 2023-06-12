@@ -22,42 +22,33 @@
 ##Opção: [v] exibe o progresso, [p] mantem as permissões
 
 #tar -czf /home/servidor/Documentos/backup/backup_$(date +%d%m%y).tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento
-
-
-
 echo -e "\n ################## INICIO ##################\n\n"
-
-
-
-
+#Cria a variavel do backup
 nome_arq=/home/servidor/Documentos/backup_$(date +%d%m%y).tar.gz
+#escreve no arquivo os backup
+echo $(ls /home/servidor/Documentos/backup) > /home/servidor/Documentos/corpo_da_mensagem.txt
+nome_arquivo=($nome_arq)
+#echo "nome do arquivo:" $nome_arquivo
+#Informa a quantidade de arquivos existentes na pasta
+qtd_arq=$(find /home/servidor/Documentos/backup/ -type f | wc -l)
 
-echo $(ls /home/servidor/Documentos/backup) > /home/servidor/Documentos/arquivos.txt
-sleep 2
-while read arq; do
-	#echo "Entrou no while leitura do arquivo"
-	nome_arquivo=($arq)
-	#echo "nome do arquivo:" $nome_arquivo
-	#Informa a quantidade de arquivos existentes na pasta
-	qtd_arq=$(find /home/servidor/Documentos/backup/ -type f | wc -l)
-	echo -e "Quantidade de arquivo: \t" $qtd_arq
-	#echo "Quantidade de backup na pasta:" $(find /home/servidor/Documentos/backup/ -type f | wc -l)
-	#if((1#${#nome_arquivo[@]}>2))
-	if (($qtd_arq > 1))
-	then
+echo  -e "Quantidade de backup na pasta:\t" $(find /home/servidor/Documentos/backup/ -type f | wc -l) >> /home/servidor/Documentos/corpo_da_mensagem.txt
+
+if [$qtd_arq -ge 1];	then
 		#echo "Entrou no IF"
-		echo "Irá remover o arquivo:" $(find /home/servidor/Documentos/backup/ -mtime +6)
+		echo "Irá remover o arquivo:" $(find /home/servidor/Documentos/backup/ -mtime +6) >> /home/servidor/Documentos/corpo_da_mensagem.txt
 		rm -f $(find /home/servidor/Documentos/backup/ -mtime +6)
 		sleep 2
-	else
+else
 		echo -e "\n###############\n"
 		echo -e "Não entrou no IF \n"
-		echo "Encontrou este arquivo" $(find /home/servidor/Documentos/backup/ -mtime +1)
+		echo  -e "\nEncontrou este arquivo:\t" $(find /home/servidor/Documentos/backup/ -mtime +1) >> /home/servidor/Documentos/corpo_da_mensagem.txt
 		echo -e "\n###############\n"
-	fi
-#echo "Terminou o wilhe"
+fi
+
 #echo "Removeu o arquivo"
 sleep 2
+
 ###################################
 ########### INICIO BACKUP ###########
 ##Primeiro remove os backup antigos e posterior realiza um novo backup
