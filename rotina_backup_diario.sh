@@ -20,7 +20,8 @@
 ## montada referente ao servidor de backup.
 ##
 ##Opção: [v] exibe o progresso, [p] mantem as permissões
-echo -e "Inicializado o backup diario" >> /home/servidor/Documentos/corpo_da_mensagem.txt
-tar -uzf /home/servidor/Documentos/win/backup_diario.tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento
-echo -e $(ls -lth /home/Documentos/win/) >> /home/servidor/Documentos/corpo_da_mensagem.txt
-echo -e "Finalizado o backup diario" >> /home/servidor/Documentos/corpo_da_mensagem.txt
+echo -e "Inicializado o backup diario" $(date +%d%m%y--%H:%M) >> /home/servidor/Documentos/corpo_da_mensagem.txt
+#tar -uzf /home/servidor/Documentos/win/backup_diario.tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento
+#echo -e $(ls -lth /home/Documentos/win) >> /home/servidor/Documentos/corpo_da_mensagem.txt
+echo -e "Finalizado o backup diario\n" >> /home/servidor/Documentos/corpo_da_mensagem.txt
+echo -e "################################"
