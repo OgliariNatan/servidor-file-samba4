@@ -3,8 +3,8 @@
 #####	NOME:				rotina_backup.sh
 #####	VERSÃO:				1.2
 #####	DESCRIÇÃO:			Implementação rotina de backup
-#####	DATA DA CRIAÇÃO:	26/03/2023
-#####	ESCRITO POR:		Natan Ogliari
+#####	DATA DA CRIAÇÃO:		26/03/2023
+#####	ESCRITO POR:			Natan Ogliari
 #####	E-MAIL:				natanogliari@gmail.com
 #####	DISTRO:				Ubuntu GNU/Linux 22.04
 #####	LICENÇA:			MIT license
@@ -27,23 +27,22 @@ echo -e "\n ################## INICIO ##################\n\n"
 nome_arq=/home/servidor/Documentos/backup_$(date +%d%m%y).tar.gz
 #escreve no arquivo os backup
 echo $(ls /home/servidor/Documentos/backup) > /home/servidor/Documentos/corpo_da_mensagem.txt
-nome_arquivo=($nome_arq)
-#echo "nome do arquivo:" $nome_arquivo
-#Informa a quantidade de arquivos existentes na pasta
-qtd_arq=$(find /home/servidor/Documentos/backup/ -type f | wc -l)
 
+#Informa a quantidade de arquivos existentes na pasta
+#qtd_arq=$(find /home/servidor/Documentos/backup/ -type f | wc -l)
+qtd_arq=$(ls /home/servidor/Documentos/backup | wc -l)
 echo  -e "Quantidade de backup na pasta:\t" $(find /home/servidor/Documentos/backup/ -type f | wc -l) >> /home/servidor/Documentos/corpo_da_mensagem.txt
-# Ver qual a melhor implemantação (>=) ou  (-ge). a ultima
-if [$(find /home/servidor/Documentos/backup/ -type f | wc -l) -ge 1];	then
-		#echo "Entrou no IF"
-		echo "Irá remover o arquivo:" $(find /home/servidor/Documentos/backup/ -mtime +6) >> /home/servidor/Documentos/corpo_da_mensagem.txt
-		rm -f $(find /home/servidor/Documentos/backup/ -mtime +6)
-		sleep 2
+qtd_arq=1
+if [$qtd_arq -ge 1];	then
+	#echo "Entrou no IF"
+	echo "Irá remover o arquivo:" $(find /home/servidor/Documentos/backup/ -mtime +6) >> /home/servidor/Documentos/corpo_da_mensagem.txt
+	rm -f $(find /home/servidor/Documentos/backup/ -mtime +6)
+	sleep 2
 else
-		echo -e "\n###############\n"
-		echo -e "Não entrou no IF \n"
-		echo  -e "\nEncontrou este arquivo:\t" $(find /home/servidor/Documentos/backup/ -mtime +1) >> /home/servidor/Documentos/corpo_da_mensagem.txt
-		echo -e "\n###############\n"
+	echo -e "\n###############\n"
+	echo -e "Não entrou no IF \n"
+	echo  -e "\nEncontrou este arquivo:\t" $(find /home/servidor/Documentos/backup/ -mtime +1) >> /home/servidor/Documentos/corpo_da_mensagem.txt
+	echo -e "\n###############\n"
 fi
 
 #sleep 2
@@ -51,9 +50,9 @@ fi
 ###################################
 ########### INICIO BACKUP ###########
 ##Primeiro remove os backup antigos e posterior realiza um novo backup
-
+echo -e "\n Inicio  o backup\n" >> /home/servidor/Documentos/corpo_da_mensagem.txt
 tar -czf /home/servidor/Documentos/backup/backup_$(date +%d%m%y).tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento
-#sleep 5
+sleep 5
 ######### FIM BACKUP ##########
 ##############################
 ## Sistema para informar o que esta acontecendo com o backup,
@@ -75,5 +74,6 @@ echo "\n \n" >> /home/servidor/Documentos?corpo_da_mensagem.txt
 sleep 5
 
 echo -e "\n############################ FIM ######################\n\n"
-reboot
+#reboot
 #halt --reboot
+unset qtd_arq nome_arq
