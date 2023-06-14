@@ -32,12 +32,17 @@ echo $(ls /home/servidor/Documentos/backup) > /home/servidor/Documentos/corpo_da
 #qtd_arq=$(find /home/servidor/Documentos/backup/ -type f | wc -l)
 qtd_arq=$(ls /home/servidor/Documentos/backup | wc -l)
 echo  -e "Quantidade de backup na pasta:\t" $(find /home/servidor/Documentos/backup/ -type f | wc -l) >> /home/servidor/Documentos/corpo_da_mensagem.txt
-qtd_arq=1
-if [$qtd_arq -ge 1];	then
+#qtd_arq=1
+#############################################
+#Quantidade de arquivos de backup a ser mantido
+par_teste=1
+echo -e "Minha variavel vale:\t" $qtd_arq
+
+if [ $qtd_arq -ge $par_teste ];	then
 	#echo "Entrou no IF"
 	echo "Irá remover o arquivo:" $(find /home/servidor/Documentos/backup/ -mtime +6) >> /home/servidor/Documentos/corpo_da_mensagem.txt
 	rm -f $(find /home/servidor/Documentos/backup/ -mtime +6)
-	sleep 2
+	#sleep 2
 else
 	echo -e "\n###############\n"
 	echo -e "Não entrou no IF \n"
@@ -50,9 +55,10 @@ fi
 ###################################
 ########### INICIO BACKUP ###########
 ##Primeiro remove os backup antigos e posterior realiza um novo backup
-echo -e "\n Inicio  o backup\n" >> /home/servidor/Documentos/corpo_da_mensagem.txt
+echo -e "\n Iniciou  o backup\n" >> /home/servidor/Documentos/corpo_da_mensagem.txt
+#Realiza o backup
 tar -czf /home/servidor/Documentos/backup/backup_$(date +%d%m%y).tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento
-sleep 5
+sleep 2
 ######### FIM BACKUP ##########
 ##############################
 ## Sistema para informar o que esta acontecendo com o backup,
@@ -71,9 +77,9 @@ echo "Backup Finalizado em:" $(date +%d%m%y¨%a¨), Dir do backup: $nome_arq >> 
 echo "Possui" $(find /home/servidor/Documentos/backup/ -type f | wc -l) "Arquivos de backup" >> /home/servidor/Documentos/corpo_da_mensagem.txt
 echo "Uso do disco sda6:" $(df -h /dev/sda6) >> /home/servidor/Documentos/corpo_da_mensagem.txt
 echo "\n \n" >> /home/servidor/Documentos?corpo_da_mensagem.txt
-sleep 5
+sleep 2
 
 echo -e "\n############################ FIM ######################\n\n"
 #reboot
 #halt --reboot
-unset qtd_arq nome_arq
+unset qtd_arq nome_arq par_set
