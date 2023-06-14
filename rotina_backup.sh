@@ -22,11 +22,11 @@
 ##Opção: [v] exibe o progresso, [p] mantem as permissões
 
 #tar -czf /home/servidor/Documentos/backup/backup_$(date +%d%m%y).tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento
-echo -e "\n ################## INICIO ##################\n\n"
+echo -e "\n ################## INICIO ##################\n"
 #Cria a variavel do backup
 nome_arq=/home/servidor/Documentos/backup_$(date +%d%m%y).tar.gz
 #escreve no arquivo os backup
-echo $(ls /home/servidor/Documentos/backup) > /home/servidor/Documentos/corpo_da_mensagem.txt
+echo -e "Possui na pasta backup:\t" $(ls /home/servidor/Documentos/backup) > /home/servidor/Documentos/corpo_da_mensagem.txt
 
 #Informa a quantidade de arquivos existentes na pasta
 #qtd_arq=$(find /home/servidor/Documentos/backup/ -type f | wc -l)
@@ -36,7 +36,7 @@ echo  -e "Quantidade de backup na pasta:\t" $(find /home/servidor/Documentos/bac
 #############################################
 #Quantidade de arquivos de backup a ser mantido
 par_teste=1
-echo -e "Minha variavel vale:\t" $qtd_arq
+#############################
 
 if [ $qtd_arq -ge $par_teste ];	then
 	#echo "Entrou no IF"
@@ -49,7 +49,7 @@ else
 	echo  -e "\nEncontrou este arquivo:\t" $(find /home/servidor/Documentos/backup/ -mtime +1) >> /home/servidor/Documentos/corpo_da_mensagem.txt
 	echo -e "\n###############\n"
 fi
-
+#######################################################
 #sleep 2
 
 ###################################
