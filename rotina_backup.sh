@@ -22,11 +22,11 @@
 ##Opção: [v] exibe o progresso, [p] mantem as permissões
 
 #tar -czf /home/servidor/Documentos/backup/backup_$(date +%d%m%y).tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento
-echo -e "\n ################## INICIO ##################\n"
+echo -e "\n ################## INICIO ##################\n\n"
 #Cria a variavel do backup
 nome_arq=/home/servidor/Documentos/backup_$(date +%d%m%y).tar.gz
 #escreve no arquivo os backup
-echo -e "Possui na pasta backup:\t" $(ls /home/servidor/Documentos/backup) > /home/servidor/Documentos/corpo_da_mensagem.txt
+echo $(ls /home/servidor/Documentos/backup) > /home/servidor/Documentos/corpo_da_mensagem.txt
 
 #Informa a quantidade de arquivos existentes na pasta
 #qtd_arq=$(find /home/servidor/Documentos/backup/ -type f | wc -l)
@@ -36,7 +36,7 @@ echo  -e "Quantidade de backup na pasta:\t" $(find /home/servidor/Documentos/bac
 #############################################
 #Quantidade de arquivos de backup a ser mantido
 par_teste=1
-#############################
+echo -e "Minha variavel vale:\t" $qtd_arq
 
 if [ $qtd_arq -ge $par_teste ];	then
 	#echo "Entrou no IF"
@@ -44,12 +44,12 @@ if [ $qtd_arq -ge $par_teste ];	then
 	rm -f $(find /home/servidor/Documentos/backup/ -mtime +6)
 	#sleep 2
 else
-	echo -e "\n###############\n"
-	echo -e "Não entrou no IF \n"
+	#echo -e "\n###############\n"
+	#echo -e "Não entrou no IF \n"
 	echo  -e "\nEncontrou este arquivo:\t" $(find /home/servidor/Documentos/backup/ -mtime +1) >> /home/servidor/Documentos/corpo_da_mensagem.txt
-	echo -e "\n###############\n"
+	#echo -e "\n###############\n"
 fi
-#######################################################
+
 #sleep 2
 
 ###################################
@@ -57,7 +57,7 @@ fi
 ##Primeiro remove os backup antigos e posterior realiza um novo backup
 echo -e "\n Iniciou  o backup\n" >> /home/servidor/Documentos/corpo_da_mensagem.txt
 #Realiza o backup
-tar -czf /home/servidor/Documentos/backup/backup_$(date +%d%m%y).tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento
+tar -czf /home/servidor/Documentos/backup/backup_$(date +%d%m%y--%H%M).tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento
 sleep 2
 ######### FIM BACKUP ##########
 ##############################
@@ -73,13 +73,13 @@ echo -e "tamanho do backup:\t $(ls -sh /home/servidor/Documentos/backup)" >> /ho
 
 ## ao final reinicia o  servidor
 
-echo "Backup Finalizado em:" $(date +%d%m%y¨%a¨), Dir do backup: $nome_arq >> /home/servidor/Documentos/corpo_da_mensagem.txt
+echo "Backup Finalizado em:" $(date +%d%m%y¨%a¨-%H%M)", Dir do backup:" $nome_arq >> /home/servidor/Documentos/corpo_da_mensagem.txt
 echo "Possui" $(find /home/servidor/Documentos/backup/ -type f | wc -l) "Arquivos de backup" >> /home/servidor/Documentos/corpo_da_mensagem.txt
 echo "Uso do disco sda6:" $(df -h /dev/sda6) >> /home/servidor/Documentos/corpo_da_mensagem.txt
-echo "\n \n" >> /home/servidor/Documentos?corpo_da_mensagem.txt
+echo "\n \n" >> /home/servidor/Documentos/corpo_da_mensagem.txt
 sleep 2
 
-echo -e "\n############################ FIM ######################\n\n"
+#echo -e "\n############################ FIM ######################\n\n"
 #reboot
 #halt --reboot
 unset qtd_arq nome_arq par_set
