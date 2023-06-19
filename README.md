@@ -106,7 +106,3 @@ ctrl+o &#8680; Salva o arquivo cro
 
  * <code> who -b </code> &#8680; Última inicialização do sistema.
  * <code> uptime -p </code> &#8680; Tempo de operação.
-
-
-### Um teste de implementação
-=IMOORTXML("https://github.com/OgliariNatan/servidor-file-samba4/graphs/traffic";"//*[@id="js-clones-graph"]/ul/li[2]/div/ul/li[1]")
