@@ -22,7 +22,7 @@
 ##Opção: [v] exibe o progresso, [p] mantem as permissões
 
 #tar -czf /home/servidor/Documentos/backup/backup_$(date +%d%m%y).tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento
-echo -e "\n ################## INICIO ##################\n\n"
+#echo -e "\n ################## INICIO ##################\n\n"
 #Cria a variavel do backup
 nome_arq=/home/servidor/Documentos/backup_$(date +%d%m%y).tar.gz
 #escreve no arquivo os backup
