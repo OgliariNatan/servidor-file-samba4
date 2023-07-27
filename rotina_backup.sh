@@ -24,14 +24,14 @@
 #tar -czf /home/servidor/Documentos/backup/backup_$(date +%d%m%y).tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento
 #echo -e "\n ################## INICIO ##################\n\n"
 #Cria a variavel do backup
-nome_arq=/home/servidor/Documentos/backup_$(date +%d%m%y).tar.gz
+nome_arq=/home/servidor/Documentos/backup/backup$(date +%d%m%y).tar.gz
 #escreve no arquivo os backup
-echo $(ls /home/servidor/Documentos/backup) > /home/servidor/Documentos/corpo_da_mensagem.txt
+echo $(ls /home/servidor/Documentos/backup/backup) > /home/servidor/Documentos/corpo_da_mensagem.txt
 
 #Informa a quantidade de arquivos existentes na pasta
 #qtd_arq=$(find /home/servidor/Documentos/backup/ -type f | wc -l)
-qtd_arq=$(ls /home/servidor/Documentos/backup | wc -l)
-echo  -e "Quantidade de backup na pasta:\t" $(find /home/servidor/Documentos/backup/ -type f | wc -l) >> /home/servidor/Documentos/corpo_da_mensagem.txt
+qtd_arq=$(ls /home/servidor/Documentos/backup/backup | wc -l)
+echo  -e "Quantidade de backup na pasta:\t" $(find /home/servidor/Documentos/backup/backup -type f | wc -l) >> /home/servidor/Documentos/corpo_da_mensagem.txt
 #qtd_arq=1
 #############################################
 #Quantidade de arquivos de backup a ser mantido
@@ -40,13 +40,13 @@ echo -e "Minha variavel vale:\t" $qtd_arq
 
 if [ $qtd_arq -ge $par_teste ];	then
 	#echo "Entrou no IF"
-	echo "Irá remover o arquivo:" $(find /home/servidor/Documentos/backup/ -mtime +6) >> /home/servidor/Documentos/corpo_da_mensagem.txt
-	rm -f $(find /home/servidor/Documentos/backup/ -mtime +6)
+	echo "Irá remover o arquivo:" $(find /home/servidor/Documentos/backup/backup -mtime +6) >> /home/servidor/Documentos/corpo_da_mensagem.txt
+	rm -f $(find /home/servidor/Documentos/backup/backup -mtime +6)
 	#sleep 2
 else
 	#echo -e "\n###############\n"
 	#echo -e "Não entrou no IF \n"
-	echo  -e "\nEncontrou este arquivo:\t" $(find /home/servidor/Documentos/backup/ -mtime +1) >> /home/servidor/Documentos/corpo_da_mensagem.txt
+	echo  -e "\nEncontrou este arquivo:\t" $(find /home/servidor/Documentos/backup/backup -mtime +1) >> /home/servidor/Documentos/corpo_da_mensagem.txt
 	#echo -e "\n###############\n"
 fi
 
@@ -57,14 +57,14 @@ fi
 ##Primeiro remove os backup antigos e posterior realiza um novo backup
 echo -e "\n Iniciou  o backup\n" >> /home/servidor/Documentos/corpo_da_mensagem.txt
 #Realiza o backup
-tar -czf /home/servidor/Documentos/backup/backup_$(date +%d%m%y--%H%M).tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento
+tar -czf /home/servidor/Documentos/backup/backup$(date +%d%m%y--%H%M).tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento
 sleep 2
 ######### FIM BACKUP ##########
 ##############################
 ## Sistema para informar o que esta acontecendo com o backup,
 ## para enviar via e-mail as informações das saidas
 
-echo -e "tamanho do backup:\t $(ls -sh /home/servidor/Documentos/backup)" >> /home/servidor/Documentos/corpo_da_mensagem.txt
+echo -e "tamanho do backup:\t $(ls -sh /home/servidor/Documentos/backup/backup)" >> /home/servidor/Documentos/corpo_da_mensagem.txt
 
 
 ## Envia via e-mail quando houver falha no backup
@@ -74,7 +74,7 @@ echo -e "tamanho do backup:\t $(ls -sh /home/servidor/Documentos/backup)" >> /ho
 ## ao final reinicia o  servidor
 
 echo "Backup Finalizado em:" $(date +%d%m%y¨%a¨-%H%M)", Dir do backup:" $nome_arq >> /home/servidor/Documentos/corpo_da_mensagem.txt
-echo "Possui" $(find /home/servidor/Documentos/backup/ -type f | wc -l) "Arquivos de backup" >> /home/servidor/Documentos/corpo_da_mensagem.txt
+echo "Possui" $(find /home/servidor/Documentos/backup/backup -type f | wc -l) "Arquivos de backup" >> /home/servidor/Documentos/corpo_da_mensagem.txt
 echo "Uso do disco sda6:" $(df -h /dev/sda6) >> /home/servidor/Documentos/corpo_da_mensagem.txt
 echo "\n \n" >> /home/servidor/Documentos/corpo_da_mensagem.txt
 sleep 2
