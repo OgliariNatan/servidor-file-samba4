@@ -30,9 +30,8 @@ Cria-se usuários normais no <img src="https://img.shields.io/badge/-LINUX-brigh
 * <code>sudo smbpasswd -U [nome_usuario]</code> &#8680; Altera senha <img src="https://img.shields.io/badge/-SAMBA-violet"/>
 <details>
 <summary> Curiosidade </summary>
-
 <p> <code> sudo adduser --no-create-home --disabled-login {NAME_USER} </code> </p>
-
+<p> <code> usermod -e [data_expiração AAAA-MM-DD] [NAME_USER] </code> </p>
 </details>
 
 <details>
