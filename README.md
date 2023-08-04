@@ -28,6 +28,12 @@ Cria-se usuários normais no <img src="https://img.shields.io/badge/-LINUX-brigh
 * <code>sudo useradd [nome_usuario]</code> &#8680; Cria usuario no linux.
 * <code>sudo smbpasswd -a [nome_usuario]</code> &#8680; add usuários ao <img src="https://img.shields.io/badge/-SAMBA-violet"/> e especifica uma senha
 * <code>sudo smbpasswd -U [nome_usuario]</code> &#8680; Altera senha <img src="https://img.shields.io/badge/-SAMBA-violet"/>
+<details>
+<summary> Curiosidade </summary>
+
+<p> <code> sudo adduser --no-create-home --disabled-login {NAME_USER} </code> </p>
+
+</details>
 
 <details>
 <summary> Alterando o arquivo $sudoers </summary>
