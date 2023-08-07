@@ -1,7 +1,7 @@
 #!/bin/bash
-##
+#--------------------------------------------------------------------------------------
 #####	NOME:				rotina_backup.sh
-#####	VERSÃO:				1.2
+#####	VERSÃO:				1.3
 #####	DESCRIÇÃO:			Implementação rotina de backup
 #####	DATA DA CRIAÇÃO:		26/03/2023
 #####	ESCRITO POR:			Natan Ogliari
@@ -10,7 +10,7 @@
 #####	LICENÇA:			MIT license
 #####	PROJETO:			https://github.com/OgliariNatan/servidor-file-samba4
 #########################Torne o scripty executavél ##########
-## chmod u+x novo_script
+## chmod +x novo_script
 ##############################
 ## Script idealizado para manter uma política de backup dos arquivos
 ## compartilhados no Servidor de Arquivos.
@@ -20,22 +20,22 @@
 ## montada referente ao servidor de backup.
 ##
 ##Opção: [v] exibe o progresso, [p] mantem as permissões
-
+#-----------------------------------------------------------------------------------------
 #tar -czf /home/servidor/Documentos/backup/backup_$(date +%d%m%y).tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento
 #echo -e "\n ################## INICIO ##################\n\n"
 #Cria a variavel do backup
-nome_arq=/home/servidor/Documentos/backup/backup$(date +%d%m%y).tar.gz
+local nome_arq=/home/servidor/Documentos/backup/backup$(date +%d%m%y).tar.gz
 #escreve no arquivo os backup
 echo $(ls /home/servidor/Documentos/backup/backup) > /home/servidor/Documentos/corpo_da_mensagem.txt
 
 #Informa a quantidade de arquivos existentes na pasta
 #qtd_arq=$(find /home/servidor/Documentos/backup/ -type f | wc -l)
-qtd_arq=$(ls /home/servidor/Documentos/backup/backup | wc -l)
+local qtd_arq=$(ls /home/servidor/Documentos/backup/backup | wc -l)
 echo  -e "Quantidade de backup na pasta:\t" $(find /home/servidor/Documentos/backup/backup -type f | wc -l) >> /home/servidor/Documentos/corpo_da_mensagem.txt
 #qtd_arq=1
 #############################################
 #Quantidade de arquivos de backup a ser mantido
-par_teste=1
+local par_teste=1
 echo -e "Minha variavel vale:\t" $qtd_arq
 
 if [ $qtd_arq -ge $par_teste ];	then
