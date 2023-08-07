@@ -57,14 +57,14 @@ fi
 ##Primeiro remove os backup antigos e posterior realiza um novo backup
 echo -e "\n Iniciou  o backup\n" >> /home/servidor/Documentos/corpo_da_mensagem.txt
 #Realiza o backup
-tar -czf /home/servidor/Documentos/backup/backup$(date +%d%m%y--%H%M).tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento
+tar -czf /home/servidor/backup/backup$(date +%d%m%y--%H%M).tar.gz /home/servidor/Compartilhamento
 sleep 2
 ######### FIM BACKUP ##########
 ##############################
 ## Sistema para informar o que esta acontecendo com o backup,
 ## para enviar via e-mail as informações das saidas
 
-echo -e "tamanho do backup:\t $(ls -sh /home/servidor/Documentos/backup/backup)" >> /home/servidor/Documentos/corpo_da_mensagem.txt
+echo -e "tamanho do backup:\t $(ls -sh /home/servidor/backup/backup)" >> /home/servidor/backup/log/corpo_da_mensagem.txt
 
 
 ## Envia via e-mail quando houver falha no backup
@@ -73,10 +73,11 @@ echo -e "tamanho do backup:\t $(ls -sh /home/servidor/Documentos/backup/backup)"
 
 ## ao final reinicia o  servidor
 
-echo "Backup Finalizado em:" $(date +%d%m%y¨%a¨-%H%M)", Dir do backup:" $nome_arq >> /home/servidor/Documentos/corpo_da_mensagem.txt
-echo "Possui" $(find /home/servidor/Documentos/backup/backup -type f | wc -l) "Arquivos de backup" >> /home/servidor/Documentos/corpo_da_mensagem.txt
-echo "Uso do disco sda6:" $(df -h /dev/sda6) >> /home/servidor/Documentos/corpo_da_mensagem.txt
-echo "\n \n" >> /home/servidor/Documentos/corpo_da_mensagem.txt
+echo "Backup Finalizado em:" $(date +%d%m%y¨%a¨-%H%M)", Dir do backup:" $nome_arq >> /home/servidor/backup/log/corpo_da_mensagem.txt
+echo "Possui" $(find /home/servidor/backup/backup -type f | wc -l) "Arquivos de backup" >> /home/servidor/backup/log/corpo_da_mensagem.txt
+echo -e "Uso do disco backup:\t" $(df -h /dev/sdb1) >> /home/servidor/backup/log/corpo_da_mensagem.txt
+echo -e "Uso do disco do servidor:\t" $(df -h /dev/mapper/ubuntu--vg-ubuntu--lv) >> /home/servidor/backup/log/corpo_da_mensagem.txt
+echo "\n \n" >> /home/servidor/backup/log/corpo_da_mensagem.txt
 sleep 2
 
 #echo -e "\n############################ FIM ######################\n\n"
