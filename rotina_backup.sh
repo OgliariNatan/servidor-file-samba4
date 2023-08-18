@@ -24,7 +24,7 @@
 #tar -czf /home/servidor/Documentos/backup/backup_$(date +%d%m%y).tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento
 #echo -e "\n ################## INICIO ##################\n\n"
 #Cria a variavel do backup
-rotina_backup (){
+
 	local nome_arq=/home/servidor/Documentos/backup/backup$(date +%d%m%y).tar.gz
 	#escreve no arquivo os backup
 	echo $(ls /home/servidor/Documentos/backup/backup) > /home/servidor/Documentos/corpo_da_mensagem.txt
@@ -85,4 +85,3 @@ rotina_backup (){
 	#reboot
 	#halt --reboot
 	unset qtd_arq nome_arq par_set
-}
