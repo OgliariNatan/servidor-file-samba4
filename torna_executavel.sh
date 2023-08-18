@@ -11,6 +11,7 @@
 #####	LICENÇA:			MIT license
 #####	PROJETO:			https://github.com/OgliariNatan/servidor-file-samba4
 
+## chmod +x novo_script
 
 cd /home/servidor/backup/diario/servidor-file-samba4
 chmod +x rotina_backup_diario.sh delete_file_olds.sh rotina_backup.sh

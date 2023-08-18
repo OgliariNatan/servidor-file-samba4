@@ -4,13 +4,14 @@
 #####	VERSÃO:				0.1
 #####	DESCRIÇÃO:			Implementação rotina de backup diario com arquivos modificados
 #####	DATA DA CRIAÇÃO:		14/06/2023
+##### ATUALIZADO EM: 18/08/2023
 #####	ESCRITO POR:			Natan Ogliari
 #####	E-MAIL:				natanogliari@gmail.com
 #####	DISTRO:				Ubuntu GNU/Linux 22.04
 #####	LICENÇA:			MIT license
 #####	PROJETO:			https://github.com/OgliariNatan/servidor-file-samba4
 #########################Torne o scripty executavél ##########
-## chmod u+x novo_script
+## chmod +x novo_script
 ##############################
 ## Script idealizado para manter uma política de backup dos arquivos
 ## compartilhados no Servidor de Arquivos.
@@ -20,8 +21,8 @@
 ## montada referente ao servidor de backup.
 ##
 ##Opção: [v] exibe o progresso, [p] mantem as permissões
-echo -e "Inicializado o backup diario" $(date +%d%m%y--%H:%M) >> /home/servidor/Documentos/corpo_da_mensagem.txt
-tar -cfz -G /home/servidor/Documentos/win/backup_diario.tar.gz /home/servidor/Área\ de\ Trabalho/Compartilhamento
+echo -e "Inicializado o backup diario" $(date +%d%m%y--%H:%M) >> /home/servidor/backup/log/corpo_da_mensagem.txt
+tar -cfz -G /home/servidor/backup/diario/backup_diario.tar.gz /home/servidor/Compartilhados
 #echo -e $(ls -lth /home/Documentos/win) >> /home/servidor/Documentos/corpo_da_mensagem.txt
-echo -e "Finalizado o backup diario\n" >> /home/servidor/Documentos/corpo_da_mensagem.txt
+echo -e "Finalizado o backup diario\n" >> /home/servidor/backup/log/corpo_da_mensagem.txt
 echo -e "################################"
