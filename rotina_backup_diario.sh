@@ -22,7 +22,7 @@
 ##
 ##Opção: [v] exibe o progresso, [p] mantem as permissões
 echo -e "Inicializado o backup diario" $(date +%d%m%y--%H:%M) >> /home/servidor/backup/log/corpo_da_mensagem.txt
-tar -cfz -G /home/servidor/backup/diario/backup_diario.tar.gz /home/servidor/Compartilhados
+tar -czf -G /home/servidor/backup/diario/backup_diario.tar.gz /home/servidor/Compartilhados
 #echo -e $(ls -lth /home/Documentos/win) >> /home/servidor/Documentos/corpo_da_mensagem.txt
 echo -e "Finalizado o backup diario\n" >> /home/servidor/backup/log/corpo_da_mensagem.txt
 echo -e "################################"
