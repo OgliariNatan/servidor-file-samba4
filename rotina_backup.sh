@@ -58,7 +58,7 @@
 	##Primeiro remove os backup antigos e posterior realiza um novo backup
 	echo -e "\n Iniciou  o backup\n" >> /home/servidor/backup/log/corpo_da_mensagem.txt
 	#Realiza o backup
-	tar -czf /home/servidor/backup/backup$(date +%d%m%y--%H%M).tar.gz /home/servidor/Compartilhados
+	tar -czf /home/servidor/backup/backup/backup$(date +%d%m%y--%H%M).tar.gz /home/servidor/Compartilhados
 	sleep 2
 	######### FIM BACKUP ##########
 	##############################
