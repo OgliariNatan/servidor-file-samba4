@@ -112,3 +112,14 @@ ctrl+o &#8680; Salva o arquivo cro
 
  * <code> who -b </code> &#8680; Última inicialização do sistema.
  * <code> uptime -p </code> &#8680; Tempo de operação.
+
+   ### Para melhoria
+
+   O backup esta sendo realizado pelo tar, implementar com o rync
+ * diario, atualiza
+   <code> rsync -artvu /dir_origem /dir_destino  </code>
+ * semanal:::
+   <code> rsync -ar /dir_origem /dir_destino  </code>
+
+   * Para VER:::
+     <code>  rsync -ar --delete --backup --backup-dir=/dir_backup /dir_origem /dir_destino </code>
