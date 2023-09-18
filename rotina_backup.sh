@@ -87,6 +87,12 @@
 	unset qtd_arq nome_arq par_set
 
 
+###################
+#Para usar
+#rsync -avz servidor@10.40.22.35:/home/servidor/Área\ de\ Trabalho/Compartilhamento /home/servidor/Compartilhados
+###################################
+
+
 
 #/home/servidor/backup/log
 #/home/servidor/backup/backup
