@@ -9,6 +9,33 @@ Um pequeno manual de como configurar um servidor de arquivos com acesso por user
 * <code>sudo service ssh start</code>
 * <del> <code>ufw allow ssh </del> | ufw allow 22</code> #porta do samba (22)
 
+## Alterando para IP estático, no ubuntu server 22.04 📋 🏥
+* Altere o arquivo ```cd /etc/netplan/```
+* antes de qualquer coisa crie um backup do arq existente.
+* ``` sudo cp *.yaml *.yam.old```
+* Após abra o arquivo:
+*  ```sudo nano *.yaml```
+em exemplo de como ficará:
+``` shell
+ # This is the network config written by 'subiquity'
+network:
+   version: 2
+   renderer: networkd
+   ethernets:
+      enp2s0:
+         dhcp4: false
+         dhcp6: no
+         addresses: [20.40.22.1/24]
+         routes:
+             - to: default
+               via: 20.40.22.254
+         #gateway4: 20.40.22.254
+         nameservers:
+            addresses: [8.8.8.8,8.8.4.4]
+```
+[] Cuide da identação, que deverá se com **espaços** em vez de **tab**.
+[] Observe que o comando __gateway4:__ é obsoleto em vez disso utilize o **routes:**.
+ 
 ## Alterando a porta ssh
 
 * <code> nano /etc/ssh/sshd_config</code>
