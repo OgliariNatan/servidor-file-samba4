@@ -102,8 +102,8 @@ Criar um arquivo em:
 
 ## Para auditoria em tempo real
 
-* <code>tail -f /var/log/syslog</code>
-
+* ```tail -f /var/log/syslog```
+  
 ## Testando a configuração do <img src="https://img.shields.io/badge/-SAMBA-violet"/>
 
 * <code>testparm</code> &#8680; Realiza o teste do arquivo smb.conf
@@ -112,9 +112,11 @@ Criar um arquivo em:
 
 Após toda e qualquer alteração, é necessário reiniciar os processos.
 
-* <code> sudo systemctl restart smbd.service</code>
-* <code> sudo systemctl restart nmbd.service</code>
-* <code> sudo systemctl restart syslog</code>
+```shell
+sudo systemctl restart smbd.service
+sudo systemctl restart nmbd.service
+sudo systemctl restart syslog
+```
 
 ## Autorizando a execução do arquivo de rotina_backup.
 
