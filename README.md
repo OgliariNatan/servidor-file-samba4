@@ -155,7 +155,7 @@ ctrl+o &#8680; Salva o arquivo cro
   ```
 
  ```shell
-     rsync -ar usuario@IP:home/servidor/Área\ de\ Trabalho/Compartilhamento/ /home/servidor/Compartilhados/
+     rsync -a -r -v usuario@IP:home/servidor/Área\ de\ Trabalho/Compartilhamento/ /home/servidor/Compartilhados/
  ```
    * Para VER:::
      <code>  rsync -ar --delete --backup --backup-dir=/dir_backup /dir_origem /dir_destino </code>
