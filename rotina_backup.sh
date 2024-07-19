@@ -90,6 +90,9 @@
 ###################
 #Para usar
 #rsync -avz servidor@10.40.22.35:/home/servidor/Área\ de\ Trabalho/Compartilhamento/ /home/servidor/Compartilhados/
+#rsync -avz servidor@10.40.22.35:/home/servidor/Área\ de\ Trabalho/Arquivados/ /home/servidor/backup/arquivados
+
+
 ###################################
 
 
