@@ -146,11 +146,11 @@ ctrl+o &#8680; Salva o arquivo cro
 
    O backup esta sendo realizado pelo tar, implementar com o rync
  * diario, atualiza
-  ```shell
+ ```shell
  rsync -artvu /dir_origem /dir_destino
  ```
  * semanal 🌐
-   ```shell
+  ```shell
     rsync -ar /dir_origem /dir_destino 
   ```
 
