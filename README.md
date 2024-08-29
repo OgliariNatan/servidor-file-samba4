@@ -33,9 +33,19 @@ network:
          nameservers:
             addresses: [8.8.8.8,8.8.4.4]
 ```
-[] Cuide da identação, que deverá se com **espaços** em vez de **tab**.
-[] Observe que o comando __gateway4:__ é obsoleto em vez disso utilize o **routes:**.
- 
+[ ] Cuide da identação, que deverá se com **espaços** em vez de **tab**. <br>
+[ ] Observe que o comando __gateway4:__ é obsoleto em vez disso utilize o **routes:**.
+#### Aplicando alteração
+* Testendo a sintexe do arquivo
+  ```
+  sudo netplan try
+  ```
+* Aplicando as configurações
+
+  ```
+  sudo netplan apply
+  ```
+  
 ## Alterando a porta ssh
 
 * <code> nano /etc/ssh/sshd_config</code>
