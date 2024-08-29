@@ -79,7 +79,8 @@ Cria-se usuários normais no <img src="https://img.shields.io/badge/-LINUX-brigh
  #### Grupos
  <p> <code> sudo grupoadd samba </code>  &#8680; Cria o grupo </p> 
  <p> <code> sudo chown -R servidor:samba /dir_com </code> </p>
- <p> <code> sudo usermod -aG grupo1,grupo2 uuario </code>  &#8680; Adiciona em varios grupos </p> 
+ <p> <code> sudo usermod -aG grupo1,grupo2 usuario </code>  &#8680; Adiciona em varios grupos </p> 
+ <p> <code> sudo group usuario </code>  &#8680; Verifica os grupos membros </p>
 </details>
 
 <details>
