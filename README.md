@@ -45,7 +45,11 @@ network:
   ```
   sudo netplan apply
   ```
-  
+* Verificando as configurações
+
+  ```
+  ip addr show
+  ```
 ## Alterando a porta ssh
 
 * <code> nano /etc/ssh/sshd_config</code>
