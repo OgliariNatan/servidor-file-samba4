@@ -76,8 +76,8 @@ Cria-se usuários normais no <img src="https://img.shields.io/badge/-LINUX-brigh
 <p> <code> sudo chage -E [AAAA-MM-DD] [NAME_USER] </code> &#8680; Configura a expiração de senha. </p>
  <p> <code>usermod -a -G [nome_do_grupo] [nome_do_usuário_que_deseja_adicionar_ao_grupo] </code> </p>
 
- #### Grupos
-
+ #### Grupos  
+<p> <code> sudo cat /etc/group </code>  &#8680; Lista os grupo </p> 
  <p> <code> sudo grupoadd samba </code>  &#8680; Cria o grupo </p> 
  <p> <code> sudo chown -R servidor:samba /dir_com </code> </p>
  <p> <code> sudo usermod -aG grupo1,grupo2 usuario </code>  &#8680; Adiciona em varios grupos </p> 
