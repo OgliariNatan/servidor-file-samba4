@@ -64,7 +64,7 @@ Arquivo de configuração do samba.
 
 ## Adicionando usuários
 
-Cria-se usuários normais no <img src="https://img.shields.io/badge/-LINUX-brightgreen" /> e adiciona ao <img src="https://img.shields.io/badge/-SAMBA-violet"/>.
+Cria-se usuários normais no <img src="https://img.shields.io/badge/-LINUX-brightgreen" /> e adiciona ao <img src="https://img.shields.io/badge/-SAMBA-violet"/>. <br>
 pdbedit -L -v | grep username <br>
 * <code>sudo useradd [nome_usuario]</code> &#8680; Cria usuario no linux.
 * <code>sudo smbpasswd -a [nome_usuario]</code> &#8680; add usuários ao <img src="https://img.shields.io/badge/-SAMBA-violet"/> e especifica uma senha
