@@ -182,3 +182,7 @@ ctrl+o &#8680; Salva o arquivo cro
  ```
    * Para VER:::
      <code>  rsync -ar --delete --backup --backup-dir=/dir_backup /dir_origem /dir_destino </code>
+
+ ```shell
+    tar -tvf /dir_arq/name_bk.tar.gz 
+  ```
