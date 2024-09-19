@@ -1,4 +1,4 @@
-#!/bin/bash
+ GNU nano 7.2    /home/servidor/samba/conf/servidor-file-samba4/rotina_backup_diario.sh              #!/bin/bash
 ##
 #####   NOME:                           rotina_backup_diario.sh
 #####   VERSÃO:                         0.1
@@ -26,12 +26,11 @@ echo -e "Inicializado o backup diario" $(date +%d%m%y) >> /home/servidor/samba/c
 DATA=$(date -d "yesterday" '+%Y-%m-%d')
 
 # Criar o backup apenas dos arquivos modificados no dia anterior
-#find /home/servidor/samba/data/compartilhados -type f -newermt "$DATA" -print0 | tar --null --files->
 
-find /home/servidor/samba/data/compartilhados -type f -newermt "$DATA" -print0 | tar --null -czvf /ho>
+find /home/servidor/samba/data/compartilhados -type f -newermt "$DATA" -print0 | tar --null -czvf /home/servidor/samba/bk_diario/$(date -d "yesterday" +%d%m%y)_backup_diario.tar.gz --files-from=-
 #Remove arquivos antigos
 
-echo -e "Removendo o arquivo\t" $(find /home/servidor/samba/bk_diario/ -mtime +7) >> /home/servidor/s>
+echo -e "Removendo o arquivo\t" $(find /home/servidor/samba/bk_diario/ -mtime +7) >> /home/servidor/samba/conf/log/log.bk_diario
 
 rm $(find /home/servidor/samba/bk_diario/ -mtime +7)
 
