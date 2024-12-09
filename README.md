@@ -73,7 +73,8 @@ pdbedit -L -v | grep username <br>
 <summary> Curiosidade </summary>
 <p> <code> sudo adduser --no-create-home --disabled-login {NAME_USER} </code> </p>
 <p> <code> usermod -e [data_expiração AAAA-MM-DD] [NAME_USER] </code> </p>
-<p> <code> sudo chage -E [AAAA-MM-DD] [NAME_USER] </code> &#8680; Configura a expiração de senha. </p>
+ <p> <code> sudo chage -l [NAME_USER] </code> &#8680; Verifica se posui a expiração da conta. </p>
+<p> <code> sudo chage -E [AAAA-MM-DD] [NAME_USER] </code> &#8680; Configura a expiração da conta. </p>
 <p> <code>usermod -aG [nome_do_grupo] [nome_do_usuário_que_deseja_adicionar_ao_grupo] </code> </p>
 <p> <code> pdbedit -L -v | grep username </code> &#8680; Lista usuarios </p>
 
