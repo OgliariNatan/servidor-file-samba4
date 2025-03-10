@@ -78,6 +78,8 @@ pdbedit -L -v | grep username <br>
 <p> <code>usermod -aG [nome_do_grupo] [nome_do_usuário_que_deseja_adicionar_ao_grupo] </code> </p>
 <p> <code> pdbedit -L -v | grep username </code> &#8680; Lista usuarios </p>
 
+<p> <code> usermod -x [NAME_USER] </code> Exclui usuário </p>
+
  #### Grupos  
 <p> <code> sudo cat /etc/group </code>  &#8680; Lista os grupo </p> 
  <p> <code> sudo grupoadd samba </code>  &#8680; Cria o grupo </p> 
