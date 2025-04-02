@@ -69,6 +69,7 @@ pdbedit -L -v | grep username <br>
 * <code>sudo useradd [nome_usuario]</code> &#8680; Cria usuario no linux.
 * <code>sudo smbpasswd -a [nome_usuario]</code> &#8680; add usuários ao <img src="https://img.shields.io/badge/-SAMBA-violet"/> e especifica uma senha
 * <code>sudo smbpasswd -U [nome_usuario]</code> &#8680; Altera senha <img src="https://img.shields.io/badge/-SAMBA-violet"/>
+* <p> <code> smbpasswd -x [NAME_USER] </code> Exclui usuário </p>
 <details>
 <summary> Curiosidade </summary>
 <p> <code> sudo adduser --no-create-home --disabled-login {NAME_USER} </code> </p>
@@ -78,7 +79,7 @@ pdbedit -L -v | grep username <br>
 <p> <code>usermod -aG [nome_do_grupo] [nome_do_usuário_que_deseja_adicionar_ao_grupo] </code> </p>
 <p> <code> pdbedit -L -v | grep username </code> &#8680; Lista usuarios </p>
 
-<p> <code> usermod -x [NAME_USER] </code> Exclui usuário </p>
+
 
  #### Grupos  
 <p> <code> sudo cat /etc/group </code>  &#8680; Lista os grupo </p> 
