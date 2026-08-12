@@ -188,5 +188,19 @@ ctrl+o &#8680; Salva o arquivo cro
      <code>  rsync -ar --delete --backup --backup-dir=/dir_backup /dir_origem /dir_destino </code>
 
  ```shell
+
+### Alguns ajuste de segurança a ser implementado.
+```
+# Calcular hash SHA256 do script
+HASH=$(sha256sum ~/backup_protegido.sh | cut -d' ' -f1)
+
+echo "Hash do script:"
+echo "$HASH"
+
+# EDITE o script e coloque este hash na variável EXPECTED_HASH
+echo ""
+echo "Atualize a linha no script com:"
+echo "EXPECTED_HASH=\"$HASH\""
+```
     tar -tvf /dir_arq/name_bk.tar.gz 
   ```
